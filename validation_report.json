@@ -1,0 +1,21 @@
+{
+  "tests": 16,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "status": "passed",
+  "python": "3.13.15",
+  "isolation": "separate_uid_seccomp_no_network_resource_limits_not_container",
+  "source_sha256": {
+    "main.py": "f7ffffb2b4c6a24fdfb43d6965c66cf26e3bbede1411fae2174bd33c81136d44",
+    "test_contract.py": "a01b4c343204cec27ce4a9d92bf2a030be1432f03279d697b4027a945d9b6540",
+    "requirements.txt": "93f90b4e0fc7e26142a425f53807caeb9c4489a3bc984b264583aae959cc9205",
+    ".gitignore": "95e5b9881836504ef66f4e94b5cec34cb1a72758153dc28844d1bbe167b32a0f",
+    "data.py": "3f8c12899fba41205ed5d1117cc020307516dcb3cba64c1bcce16d8a3469f7ea",
+    "app.py": "96e5b36cfd6731f90faa69d1972541a159ee2aa5c5060912a1d310d14433c171",
+    "test_project.py": "c68503e1cbdc84af0324b816134fa33061aa52caf983d8e29763383b7908e34a"
+  },
+  "test_output": "................                                                         [100%]\n-------- generated xml file: /tmp/qwen-check-yktvm829/output/junit.xml ---------\n16 passed in 0.17s\n",
+  "demo_output": "{\n  \"n_samples\": 256,\n  \"metrics\": {\n    \"window_sum_mae\": 60.62192117610197,\n    \"late_retention_rate\": 0.6872037914691943,\n    \"max_abs_error\": 171.41964185422773\n  },\n  \"baseline_metrics\": {\n    \"window_sum_mae\": 127.71037878205678,\n    \"late_retention_rate\": 0.0,\n    \"max_abs_error\": 184.39440545086208\n  },\n  \"explanation\": \"Sliding window size W=32, reorder_delay=32. Reorder buffer retains late events within 32 time units of the max seen time, so they contribute to future window sums. Forward cursor permanently drops events once the cursor passes them. Reorder buffer MAE=60.6219 vs baseline MAE=127.7104. Late retention: buffer=0.6872, baseline=0.0000.\"\n}\n",
+  "seed": 42
+}

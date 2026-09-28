@@ -1,0 +1,14 @@
+{
+  "n_samples": 256,
+  "metrics": {
+    "window_sum_mae": 60.62192117610197,
+    "late_retention_rate": 0.6872037914691943,
+    "max_abs_error": 171.41964185422773
+  },
+  "baseline_metrics": {
+    "window_sum_mae": 127.71037878205678,
+    "late_retention_rate": 0.0,
+    "max_abs_error": 184.39440545086208
+  },
+  "explanation": "Sliding window size W=32, reorder_delay=32. Reorder buffer retains late events within 32 time units of the max seen time, so they contribute to future window sums. Forward cursor permanently drops events once the cursor passes them. Reorder buffer MAE=60.6219 vs baseline MAE=127.7104. Late retention: buffer=0.6872, baseline=0.0000."
+}

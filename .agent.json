@@ -1,0 +1,10 @@
+{
+  "generator": "project-bundle-v2",
+  "status": "validated",
+  "date": "2026-09-28",
+  "slug": "bounded-reorder-buffer-sliding-window",
+  "description": "In-memory simulation of a bounded event stream with out-of-order arrivals; compares a bounded reorder buffer against a strict forward-cursor baseline on sliding window sum accuracy.",
+  "method": "Algorithm (bounded reorder buffer): events arrive in perturbed order; an event is dropped only if event_time < max_seen_time - reorder_delay; otherwise it is inserted into an in-memory time-to-value map; the sliding window sum at each event equals the sum of stored values in [t - W, t]. Baseline (strict forward cursor): processing_time ratchets forward; any event with event_time < processing_time is permanently dropped and never contributes to any future window. Data: n_events with integer times 0..n-1, uniform values in [0,10]; arrival order is the sorted order perturbed by bounded integer displacement of at most n/8 positions (seeded). Ground truth (y): oracle window sum using ALL events in [t-W, t]. No train/test split (single-pass streaming); all events are evaluated. Metrics: window_sum_mae (lower=better, mean absolute error vs oracle), late_retention_rate (higher=better, fraction of out-of-order events not dropped), max_abs_error (lower=better). reorder_delay = n//8, W = n//8.",
+  "category": "Real-time data processing: bounded in-memory stream, windowing and late events",
+  "bundle_sha256": "04d65d31d9575fe3c02e74e3d3637d660a5efe78d07ce3c66ec287ad3ab94502"
+}
